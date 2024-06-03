@@ -1,6 +1,6 @@
 # VTube-Sama-App
 
-VTube-Sama-App 正在内测中，欢迎体验试用！，支持Mac和Windows。
+VTube-Sama-App 正在内测中，欢迎试用！，支持Mac和Windows。
 
 此项目会采用共建方式，开放部分源码，合作开发，复现 Neuro-sama 的直播效果。
 
