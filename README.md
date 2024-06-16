@@ -6,6 +6,6 @@ VTube-Sama-App 正在内测中，欢迎试用体验！，支持Mac和Windows。
 
 ![demo_01.png](docs/demo_01.png)
 
-下载地址：[VTube-Sama-App-v1.1.0-beta-2024-06-15](https://github.com/Westworld-AI/VTube-Sama-App/releases/tag/v1.1.0-beta-2024-06-15)
+[下载地址](https://github.com/Westworld-AI/VTube-Sama-App/releases)
 
 
