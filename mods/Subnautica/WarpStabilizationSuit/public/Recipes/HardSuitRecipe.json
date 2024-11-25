@@ -1,0 +1,32 @@
+{
+    "craftAmount": 1,
+    "Ingredients": [
+      {
+        "techType": "ReinforcedDiveSuit",
+        "amount": 1
+      },
+      {
+        "techType": "ReinforcedGloves",
+        "amount": 1
+      },
+      {
+        "techType": "AramidFibers",
+        "amount": 4
+      },
+      {
+        "techType": "Lithium",
+        "amount": 4
+      },
+      {
+        "techType": "AdvancedWiringKit",
+        "amount": 2
+      },
+      {
+        "techType": "PrecursorIonCrystal",
+        "amount": 2
+      },
+    ],
+    "LinkedItems": [
+        "WarpStabilizationGloves"
+    ]
+  }

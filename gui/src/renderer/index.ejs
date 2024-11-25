@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' file: blob:;">
+    <title>VTube-Sama内测版本-v1.0.0</title>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  if (window.electronAPI === undefined) {
+    const scriptSrcs = [
+      `assets/js/live2d.min.js`,
+      `assets/js/live2dcubismcore.min.js`
+    ];
+    console.log("scriptSrcs:", scriptSrcs);
+    scriptSrcs.forEach(src => {
+      const script = document.createElement('script');
+      script.src = src;
+      document.body.appendChild(script);
+    });
+  } else {
+    window.electronAPI.getBasePath().then(basePath => {
+      // 路径处理逻辑
+      const scriptSrcs = [
+        `${basePath}live2d.min.js`,
+        `${basePath}live2dcubismcore.min.js`
+      ];
+      console.log("scriptSrcs:", scriptSrcs);
+      scriptSrcs.forEach(src => {
+        const script = document.createElement('script');
+        script.src = src;
+        document.body.appendChild(script);
+      });
+    });
+  }
+
+</script>
+</body>
+</html>

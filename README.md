@@ -1,11 +1,35 @@
-# VTube-Sama-App
+# VTube-Sama Beta
 
-VTube-Sama-App 正在内测中，欢迎试用体验！，支持Mac和Windows。
+VTube-Sama-App 是一个超低上手成本的 AI Vtube项目，支持OpenAI、Ollama、智谱，可在Mac、Windows 安装使用。
 
-此项目会采用共建方式，开放部分源码，合作开发，复刻 Neuro-sama 的直播效果。
+# 模块说明
+
+```text 
+├── binary          # 视觉模块
+├── gui             # GUI
+├── mods            # 关联的游戏模组
+
+```
+# 功能点
 
 ![demo_01.png](docs/demo_01.png)
 
-[下载地址](https://github.com/Westworld-AI/VTube-Sama-App/releases)
+# 安装文档
 
+## GUI
 
+- 安装依赖
+```bash
+cd gui
+yarn install  && npm run electron-rebuild 
+```
+
+- 启动程序
+```bash
+yarn start
+```
+
+- 打包成桌面程序
+```bash
+yarn package
+```

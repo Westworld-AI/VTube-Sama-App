@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList", "TodoList\TodoList.csproj", "{0B81C019-F41E-44AD-9FA7-018EA565D8AA}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "IndigocoderLib", "IndigocoderLib\IndigocoderLib.shproj", "{955F100E-9CAC-45DD-AC4E-AD66414D9A31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarpStabilizationSuit", "WarpStabilizationSuit\WarpStabilizationSuit.csproj", "{0268DA43-5BA4-4278-AA2B-75B5D3281999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitLib", "SuitLib\SuitLib.csproj", "{C8C370A8-4D6D-45E9-AAB1-BDB78A3B3D1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlasPAD", "AtlasPAD\AtlasPAD.csproj", "{BF361F7E-F1B5-4C64-A6FB-2F97F87C5279}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B81C019-F41E-44AD-9FA7-018EA565D8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B81C019-F41E-44AD-9FA7-018EA565D8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B81C019-F41E-44AD-9FA7-018EA565D8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B81C019-F41E-44AD-9FA7-018EA565D8AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0268DA43-5BA4-4278-AA2B-75B5D3281999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0268DA43-5BA4-4278-AA2B-75B5D3281999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0268DA43-5BA4-4278-AA2B-75B5D3281999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0268DA43-5BA4-4278-AA2B-75B5D3281999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8C370A8-4D6D-45E9-AAB1-BDB78A3B3D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C370A8-4D6D-45E9-AAB1-BDB78A3B3D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C370A8-4D6D-45E9-AAB1-BDB78A3B3D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C370A8-4D6D-45E9-AAB1-BDB78A3B3D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF361F7E-F1B5-4C64-A6FB-2F97F87C5279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF361F7E-F1B5-4C64-A6FB-2F97F87C5279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF361F7E-F1B5-4C64-A6FB-2F97F87C5279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF361F7E-F1B5-4C64-A6FB-2F97F87C5279}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28366E49-2AAC-4461-ADF0-F6D41A586D65}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\IndigocoderLib\IndigocoderLib.projitems*{0268da43-5ba4-4278-aa2b-75b5d3281999}*SharedItemsImports = 4
+		..\IndigocoderLib\IndigocoderLib.projitems*{08f2b460-b3d6-44bc-9478-443fc73c8ada}*SharedItemsImports = 4
+		..\IndigocoderLib\IndigocoderLib.projitems*{88a577cc-acdd-4e1d-9c80-5942a17dbbae}*SharedItemsImports = 4
+		..\IndigocoderLib\IndigocoderLib.projitems*{8fcd9d90-3d39-446a-8a1c-0157dd552ef3}*SharedItemsImports = 4
+		..\IndigocoderLib\IndigocoderLib.projitems*{955f100e-9cac-45dd-ac4e-ad66414d9a31}*SharedItemsImports = 13
+		..\IndigocoderLib\IndigocoderLib.projitems*{b4251089-0ede-4464-b7d0-2b986d5b4d73}*SharedItemsImports = 4
+		..\IndigocoderLib\IndigocoderLib.projitems*{b7853954-5e14-4a93-bd13-c3f91d265008}*SharedItemsImports = 4
+		..\IndigocoderLib\IndigocoderLib.projitems*{d1179e80-fd2a-4213-9007-b7d6d7f63d7f}*SharedItemsImports = 4
+		..\IndigocoderLib\IndigocoderLib.projitems*{ebc8c909-b5b2-46b1-88c5-e29bb6479a6b}*SharedItemsImports = 4
+	EndGlobalSection
+EndGlobal
