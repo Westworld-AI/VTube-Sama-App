@@ -12,6 +12,8 @@ VTube-Sama-App 是一个超低上手成本的 AI Vtube项目，支持OpenAI、Ol
 ```
 # 功能点
 
+TODO
+
 ![demo_01.png](docs/demo_01.png)
 
 # 安装文档
