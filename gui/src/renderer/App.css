@@ -1,0 +1,164 @@
+@layer tailwind-base, antd;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+body {
+  position: relative;
+  height: 100vh;
+  font-family: sans-serif;
+  overflow-y: hidden;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* app.tsx */
+.ant-layout {
+  min-height: 100vh;
+  height: 100vh; /* 确保 Layout 的高度与视口高度一致 */
+}
+
+.webkit-app-region-drag {
+  -webkit-app-region: drag;
+}
+
+.home-live2dContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* 加入min-height以确保容器至少有视口的高度 */
+  height: auto; /* 根据Live2D组件的高度来调整，'auto'表示内容的自然高度 */
+}
+
+.home-left-menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  z-index: 10;
+  margin-top: 70px;
+}
+
+.home-right-menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 10;
+  margin-top: 70px;
+}
+
+.home-scrollContainer {
+  position: absolute;
+  width: 60%;
+  bottom: 100px; /* 或者你希望的其它正值 */
+  left: 50%;
+  transform: translateX(-50%); /* 水平居中 */
+  z-index: 20;
+  display: flex; /* 使用flex布局 */
+  align-items: center; /* 垂直居中所有子项 */
+  justify-content: center; /* 水平居中所有子项 */
+}
+
+.home-cardsContainer {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%; /* 使用100%的宽度，确保容纳所有的卡片 */
+}
+
+.home-cardsContainer-card {
+  display: inline-block;
+  margin: 0 15px; /* margin设置为15px以与之前的cardMargin保持一致 */
+  width: calc((100% - 2 * 10px - (4 - 1) * 30px) / 4); /* 计算每个卡片的宽度 */
+}
+
+/* Character.tsx CSS */
+.space-card-container {
+  margin-top: 30px; /* 确保容器贴着浏览器左侧 */
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-y: auto; /* 允许纵向滚动 */
+  width: 100%; /* 容器宽度与父元素相同 */
+  max-height: calc(100vh - 120px); /* 适当减去页头或其他组件的高度 */
+}
+
+.space-add-button-container {
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.space-add-button {
+  position: fixed;
+  top: 80px;
+  right: 10px;
+  z-index: 1000;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .space-card {
+    flex: 0 0 calc(50% - 20px - 10px); /* 在视口宽度减小时，调整flex-basis */
+  }
+}
+
+@media (max-width: 480px) {
+  .space-card {
+    flex: 0 0 calc(100% - 20px - 10px); /* 在更小的视口宽度下，允许卡片各占全宽 */
+  }
+}
+
+/* EdiSpace css */
+.prototype-wrapper {
+  display: flex;
+  margin-top: 70px; /* 确保容器贴着浏览器左侧 */
+}
+
+.left-panel {
+  width: 50%; /* 分配左半屏给left-panel */
+  align-items: flex-start; /* 确保元素靠左对齐 */
+  display: flex; /* 将display设置为flex以使用flex相关属性 */
+  flex-direction: column; /* flex子元素垂直排列 */
+  margin-left: 30px; /* 确保容器贴着浏览器左侧 */
+}
+
+.right-panel {
+}
+
+.service-form, .capability-form, .user-info-form {
+  width: 100%; /* 确保子元素占满left-panel容器的宽度 */
+  margin-bottom: 20px; /* 根据需求设置间距 */
+}
+
+.image-container {
+  width: 100%; /* 确保子元素占满right-panel容器的宽度 */
+  text-align: center; /* 图片居中显示 */
+}
+
+.text-with-white-border {
+  color: black;
+  text-shadow: -1px -1px 0 #fff,
+  1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px 1px 0 #fff;
+}
+
+/* 在您的样式表中添加 */
+.icon-transparent {
+  opacity: 0.5; /* 设置为希望的透明度 */
+}
+
+/* 如果你想要鼠标悬停时图标不透明 */
+.icon-transparent:hover {
+  opacity: 1;
+}
