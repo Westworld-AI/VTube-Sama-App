@@ -37,12 +37,12 @@ VTube-Sama is a comprehensive AI VTuber solution that enables users to create an
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd VTube-Sama
+git clone https://github.com/Westworld-AI/VTube-Sama-App
+cd VTube-Sama-App
 
 # Install dependencies
 cd gui
-yarn install && npm run electron-rebuild
+yarn install
 ```
 
 ### Development
@@ -50,9 +50,6 @@ yarn install && npm run electron-rebuild
 ```bash
 # Start development server
 yarn start
-
-# Or use Makefile
-make run-gui
 ```
 
 ### Building
@@ -63,10 +60,6 @@ yarn package
 
 # Package for Windows
 yarn package-win
-
-# Or use Makefile
-make package
-make package-win
 ```
 
 ## 🛠️ Technology Stack
