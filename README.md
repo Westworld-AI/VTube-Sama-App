@@ -4,7 +4,7 @@
 
 VTube-Sama is a comprehensive AI VTuber solution that enables users to create and interact with AI-driven virtual characters. It supports multiple LLM providers, Live2D animations, live streaming integration, and cross-platform desktop deployment.
 
-![demo_01.png](docs/demo_01.png)
+![demo_01.png](docs/demo2.png)
 
 ## ✨ Features
 
