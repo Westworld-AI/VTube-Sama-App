@@ -229,7 +229,7 @@
     "webpack-merge": "^5.8.0"
   },
   "build": {
-    "productName": "Atlas AI-NPC",
+    "productName": "VTube-Sama",
     "appId": "org.erb.ElectronReact",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
