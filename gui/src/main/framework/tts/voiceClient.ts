@@ -1,8 +1,8 @@
-import { MsEdgeTTS, OUTPUT_FORMAT } from 'msedge-tts';
 import { v4 as uuidv4 } from 'uuid';
 import path from 'path';
 import axios from 'axios';
 import fs from 'fs';
+import { EdgeTTS } from './edge/edge-tts-fixed';
 
 export abstract class BaseVoiceClient {
 
@@ -12,22 +12,45 @@ export abstract class BaseVoiceClient {
 
 export class EdgeTTSVoiceClient extends BaseVoiceClient {
   async synthesis(voiceId: string, text: string, outputPath: string, config: Map<string, string>): Promise<String> {
+    try {
+      let voiceName = voiceId;
+      if (!voiceName) {
+        voiceName = 'zh-CN-XiaoyiNeural';
+      }
 
-    let voiceName = voiceId;
-    if (!voiceName) {
-      voiceName = 'zh-CN-XiaoyiNeural';
+      console.log("voiceName:", voiceName);
+
+      // Extract language from voice name
+      const lang = /([a-zA-Z]{2,5}-[a-zA-Z]{2,5}\b)/.exec(voiceName)?.[1];
+
+      const tts = new EdgeTTS({
+        voice: voiceName,
+        lang,
+        outputFormat: 'audio-24khz-96kbitrate-mono-mp3',
+        saveSubtitles: false,
+        timeout: 30_000,
+      });
+
+      console.log(`Running with nodejs edge-tts service...`);
+
+      // Generate unique filename
+      const uniqueFileName = `example_audio_${uuidv4()}.mp3`;
+      const filePath = path.join(outputPath, uniqueFileName);
+
+      // Synthesize and save to file
+      const audioBuffer = await tts.ttsPromise(text, {
+        outputType: 'buffer',
+        audioPath: filePath,
+      }) as Buffer;
+
+      // Write buffer to file
+      await fs.promises.writeFile(filePath, audioBuffer);
+
+      return Promise.resolve(uniqueFileName);
+    } catch (error) {
+      console.error('EdgeTTS synthesis error:', error);
+      throw new Error(`EdgeTTS synthesis failed: ${error instanceof Error ? error.message : String(error)}`);
     }
-
-    const tts = new MsEdgeTTS();
-    await tts.setMetadata(voiceName, OUTPUT_FORMAT.WEBM_24KHZ_16BIT_MONO_OPUS);
-
-    // 生成一个基于 uuid 的唯一文件名
-    const uniqueFileName = `example_audio_${uuidv4()}.webm`;
-    const filePath = path.join(outputPath, uniqueFileName);
-
-    // 将合成的语音保存到文件
-    await tts.toFile(filePath, text);
-    return Promise.resolve(uniqueFileName);
   }
 }
 

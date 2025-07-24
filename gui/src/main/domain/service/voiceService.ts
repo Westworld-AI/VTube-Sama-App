@@ -50,7 +50,7 @@ export class VoiceService {
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, {recursive: true});
     }
-    return this.voiceDrive.synthesis(
+    return this.voiceDrive.synthesis( 
       voiceSynthesisDTO.voiceType,
       voiceSynthesisDTO.voiceId,
       voiceSynthesisDTO.text,

@@ -9,20 +9,20 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
-import {app, BrowserWindow, shell, ipcMain, protocol, ProtocolRequest, ProtocolResponse} from 'electron';
-import {autoUpdater} from 'electron-updater';
+import { app, BrowserWindow, shell, ipcMain, protocol, ProtocolRequest, ProtocolResponse } from 'electron';
+import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
-import {resolveHtmlPath} from './util';
+import { resolveHtmlPath } from './util';
 import 'reflect-metadata';
-import {IpcHandlers} from './framework/ipcHandlers';
-import {databaseService} from './framework/orm/database';
-import {liveRoomEnvironment, liveRoomManage} from './apps/environment/liveRoomEnvironment';
-import {controlTaskManage} from './apps/control/control';
+import { IpcHandlers } from './framework/ipcHandlers';
+import { databaseService } from './framework/orm/database';
+import { liveRoomEnvironment, liveRoomManage } from './apps/environment/liveRoomEnvironment';
+import { controlTaskManage } from './apps/control/control';
 import express from 'express';
 import * as bodyParser from 'body-parser';
 import * as http from 'http';
-import {LiveEventPriorityEnum, LiveEventTypeEnum} from './framework/live/base';
+import { LiveEventPriorityEnum, LiveEventTypeEnum } from './framework/live/base';
 import ocrStorage from "./framework/vision/OCRTextStorage";
 
 
@@ -33,17 +33,17 @@ function registerFileProtocol() {
   protocol.registerFileProtocol('modelfile', (request: ProtocolRequest, callback: (response: string | ProtocolResponse) => void) => {
     const url = request.url.replace(/^modelfile:\/\//, '');
     const filePath = path.join(app.getPath('userData'), 'models', url);
-    callback({path: filePath});
+    callback({ path: filePath });
   });
   protocol.registerFileProtocol('mediafile', (request: ProtocolRequest, callback: (response: string | ProtocolResponse) => void) => {
     const url = request.url.replace(/^mediafile:\/\//, '');
     const filePath = path.join(app.getPath('userData'), 'media', url);
-    callback({path: filePath});
+    callback({ path: filePath });
   });
   protocol.registerFileProtocol('imagesfile', (request: ProtocolRequest, callback: (response: string | ProtocolResponse) => void) => {
     const url = request.url.replace(/^imagesfile:\/\//, '');
     const filePath = path.join(app.getPath('userData'), 'images', url);
-    callback({path: filePath});
+    callback({ path: filePath });
   });
 }
 
@@ -149,7 +149,7 @@ const createWindow = async () => {
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
       webSecurity: false,
-      devTools: false
+      devTools: true
     }
   });
 
@@ -176,10 +176,10 @@ const createWindow = async () => {
   // Open urls in the user's browser
   mainWindow.webContents.setWindowOpenHandler((edata) => {
     shell.openExternal(edata.url);
-    return {action: 'deny'};
+    return { action: 'deny' };
   });
 
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   // mainWindow.webContents.closeDevTools();
 
   const initControlTaskManage = controlTaskManage;
@@ -211,12 +211,12 @@ function createNewWindow() {
         : path.join(__dirname, '../../.erb/dll/preload.js'),
       contextIsolation: true, // 启用contextIsolation
       nodeIntegration: false, // 由于启用了contextIsolation，通常建议禁用nodeIntegration
-      devTools: false,
+      devTools: true,
     }
   });
 
-  // newWindow.webContents.openDevTools();
-  newWindow.webContents.closeDevTools();
+  newWindow.webContents.openDevTools();
+  // newWindow.webContents.closeDevTools();
 
   // 使用resolveHtmlPath确保路径正确
   newWindow.loadURL(resolveHtmlPath('index.html') + '#/live/live-view');
@@ -249,7 +249,7 @@ const createHttpServer = () => {
   const expressApp = express();
   expressApp.use(bodyParser.json());
   expressApp.get('/health', (req, res) => {
-    res.send({code: 200, status: 'normal'});
+    res.send({ code: 200, status: 'normal' });
   });
   expressApp.post('/game/message', (req, res) => {
     const message = req.body;
@@ -261,12 +261,12 @@ const createHttpServer = () => {
       priority: LiveEventPriorityEnum.DEFAULT_DANMAKU
     }, 1);
     // 处理接收到的消息
-    res.send({status: 'Message received'});
+    res.send({ status: 'Message received' });
   });
   expressApp.post('/vision/push', (req, res) => {
     const ocrResult = req.body["ocr_result"];
     ocrStorage.push(ocrResult);
-    res.send({status: 'Message received'});
+    res.send({ status: 'Message received' });
   });
   const options = {};
   http.createServer(options, expressApp).listen(HTTP_SERVER_PORT, () => {

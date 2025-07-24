@@ -5821,15 +5821,10 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001524, caniuse-lite@^1.0.30001587:
-  version "1.0.30001612"
-  resolved "https://mirrors.huaweicloud.com/repository/npm/caniuse-lite/-/caniuse-lite-1.0.30001612.tgz#d34248b4ec1f117b70b24ad9ee04c90e0b8a14ae"
-  integrity sha512-lFgnZ07UhaCcsSZgWW0K5j4e69dK1u/ltrL9lTUiFOwNHs12S3UMIEYgBV0Z6C6hRDev7iRnMzzYmKabYdXF9g==
-
-caniuse-lite@^1.0.30001599:
-  version "1.0.30001628"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001628.tgz#90b6cd85ddc2e9f831de0225f4ca5a130c8d8222"
-  integrity sha512-S3BnR4Kh26TBxbi5t5kpbcUlLJb9lhtDXISDPwOfI+JoC+ik0QksvkZtUVyikw3hjnkgkMPSJ8oIM9yMm9vflA==
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001524, caniuse-lite@^1.0.30001587, caniuse-lite@^1.0.30001599:
+  version "1.0.30001727"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001727.tgz"
+  integrity sha512-pB68nIHmbN6L/4C6MH1DokyR3bYqFwjaSs/sWDHGj4CTcFtQUQMuJftVwWkXq7mNWOybD3KhUv3oWHoGxgP14Q==
 
 chalk@^1.1.3:
   version "1.1.3"
@@ -10624,16 +10619,17 @@ ms@2.1.3, ms@^2.0.0, ms@^2.1.1:
   resolved "https://mirrors.huaweicloud.com/repository/npm/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-msedge-tts@^1.3.4:
-  version "1.3.4"
-  resolved "https://mirrors.huaweicloud.com/repository/npm/msedge-tts/-/msedge-tts-1.3.4.tgz#6c5ac4faf88031dcee199446ed718d7f92219adb"
-  integrity sha512-0dj86Gg9VzdOJZVCkSSK/O5Eg0NM9W5p8LsXAEPe7qUmsvdAugPUTcPwt9tyz4GThAzAFBBu554kevH8StLEHQ==
+msedge-tts@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/msedge-tts/-/msedge-tts-2.0.0.tgz#3e9b2c29edb74fe0ee4b5bc659da9280431ba450"
+  integrity sha512-9qmAh80/rvEFCWDlfqHvrZzf9zioEqksiwpNKSy8MuBud27D6FNPVTHNDc1c37dX0u6w7iYe++Dg/V0a9fAFSw==
   dependencies:
     axios "^1.5.0"
     buffer "^6.0.3"
     crypto-browserify "^3.12.0"
     isomorphic-ws "^5.0.0"
     process "^0.11.10"
+    randombytes "^2.1.0"
     stream-browserify "^3.0.0"
     ws "^8.14.1"
 
